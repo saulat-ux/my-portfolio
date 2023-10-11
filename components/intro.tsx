@@ -6,11 +6,15 @@ import React from 'react'
 import { motion } from "framer-motion"
 import Link from 'next/link'
 import { BsArrowRight, BsLinkedin } from "react-icons/bs"
-import {HiDownload} from "react-icons/hi"
+import { HiDownload } from "react-icons/hi"
 import Me from '../public/me_2-fotor.png'
 import { FaGithubSquare } from 'react-icons/fa'
+import { useEffect, useState ,useRef } from 'react'
+import { Component } from 'react'
+
 
 const Intro = () => {
+ 
   return (
 <section className='mb-28 max-w-[50rem] text-center sm:mb-0'>
         <div className='flex items-center justify-center'>
@@ -45,14 +49,16 @@ const Intro = () => {
         initial= {{ opacity:0, y:100}}
         animate = {{opacity:1, y:0 }}
         >
-        <span className="font-bold text-blue-800">Hi, I'm Saulat Zubair.</span> I'm a{" "}
-        <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">couple of years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>.My side hobbies are{" "}
-        <span className="font-bold">Tabletennis and kickboxing</span>.
-         My focus is{" "}
-        <span className="underline">React (Node.js , Next.js)</span>.
+          <div className=''>
+            <div className='text-start'>
+             <span className={` font-bold text-blue-800 text-7xl`}>Hi, I'm Saulat Zubair.</span> 
+                     <AnimateTyping text={'  world how you doing'} />
+                     </div>
+        </div>
+        
     </motion.h1>
+   
+
     <motion.div className='flex flex-col sm:flex-row items-center justify-center gap-2 
       px-4 text-lg font-medium'
       initial = {{opacity: 0 , y:100}}
@@ -89,5 +95,32 @@ const Intro = () => {
 </section>
   )
 }
+
+function AnimateTyping({text}) {
+  const [currentText , setCurrentText] = useState('')
+
+  const index = useRef(0)
+
+  useEffect(() => {
+    index.current =0;
+    setCurrentText('')
+  },[text])
+
+   const timeOutid = useEffect(() => {
+  
+    setTimeout(() => {
+      setCurrentText((value) => value + text.charAt(index.current))
+      index.current += 1;
+    },50)
+    return() => {
+      clearTimeout(timeOutid)
+    }
+  
+  },[currentText,text])
+
+    return <div>{currentText}</div>
+}
+
+
 
 export default Intro
