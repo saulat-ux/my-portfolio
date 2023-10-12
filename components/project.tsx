@@ -37,7 +37,7 @@ const Project = ({
    
    <section
    
-     className="  bg-gray-100 max-w-[62rem] border
+     className="  bg-gray-100 max-w-[25rem] sm:max-w-[62rem] border
     border-black/5 rounded-lg overflow-hidden
      sm:pr-8 relative sm:h-[30rem] hover:bg-gray-200
       transition sm:group-even:pl-8 dark:text-white

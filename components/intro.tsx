@@ -10,7 +10,7 @@ import { HiDownload } from "react-icons/hi"
 import Me from '../public/me_2-fotor.png'
 import { FaGithubSquare } from 'react-icons/fa'
 import { useEffect, useState ,useRef } from 'react'
-import { Component } from 'react'
+
 
 
 const Intro = () => {
@@ -44,16 +44,16 @@ const Intro = () => {
                 </div>
         </div>
 
-        <motion.h1 className='mb-10 mt-4 text-2xl font-medium 
+        <motion.h1 className=' mt-4 text-2xl font-medium 
         sm:text-4xl'
         initial= {{ opacity:0, y:100}}
         animate = {{opacity:1, y:0 }}
         >
           <div className=''>
-            <div className='text-start'>
-             <span className={` font-bold text-blue-800 text-7xl`}>Hi, I'm Saulat Zubair.</span> 
-                     <AnimateTyping text={'  world how you doing'} />
-                     </div>
+            <div className='text-start text-gray-800'>
+             <span className={` font-bold  text-3xl sm:text-6xl`}>Hi, I'm Saulat Zubair.</span> 
+             <AnimateTyping className='mt-10 mb-4 text-lg sm:text-2xl'/>
+              </div>
         </div>
         
     </motion.h1>
@@ -96,31 +96,41 @@ const Intro = () => {
   )
 }
 
-function AnimateTyping({text}) {
-  const [currentText , setCurrentText] = useState('')
-
-  const index = useRef(0)
+function AnimateTyping(props) {
+  const [text, setText] = useState("");
+  const speed = 50;
+  const texts = ["A Full-Stack Software Engineer.", "A React and NextJs Expert.", "With a focus on Node and ExpressJs."];
+  const [index, setIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
-    index.current =0;
-    setCurrentText('')
-  },[text])
+    let timer1;
+    let timer2;
 
-   const timeOutid = useEffect(() => {
-  
-    setTimeout(() => {
-      setCurrentText((value) => value + text.charAt(index.current))
-      index.current += 1;
-    },50)
-    return() => {
-      clearTimeout(timeOutid)
-    }
-  
-  },[currentText,text])
+    const typeCharacter = () => {
+      if (charIndex < texts[index].length) {
+        setText((prevText) => prevText + texts[index][charIndex]);
+        setCharIndex(charIndex + 1);
+        timer1 = setTimeout(typeCharacter, speed);
+      } else {
+        timer2 = setTimeout(() => {
+          setCharIndex(0);
+          setText("");
+          setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        }, 1000);
+      }
+    };
 
-    return <div>{currentText}</div>
+    timer1 = setTimeout(typeCharacter, speed);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, [index, charIndex]);
+
+  return <p {...props}>{text}</p>;
 }
-
 
 
 export default Intro

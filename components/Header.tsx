@@ -24,10 +24,20 @@ export default function Header() {
 
       <nav className=' hidden lg:block lg:flex fixed  left-1/2 h-12 -translate-x-1/2
       py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0 '>
-        <div className='flex gap-2 items-center  sm:mr-48' >
+
+        <motion.div
+        initial= {{opacity:0 , scale:0}}
+        animate= {{opacity: 1 , scale: 1}}
+        transition ={{
+          type:"tween",
+          duration:0.2,
+        }}
+        
+        className='flex gap-2 items-center  sm:mr-48' >
           <Image src={logo} alt='an image' width={100} height={100} className=' bg-white'/>
          <h2 className='text-[1.2rem] font-medium text-gray-500 sm:w-[initial]'>Saulat Zubair</h2>
-        </div>
+        </motion.div>
+
           <ul className='flex w-[22rem] flex-wrap items-center justify-center
           gap-y-1 text-[1.2rem] font-medium text-gray-500 sm:w-[initial]
           sm:flex-nowrap sm:gap-5 sm:mr-52'>
