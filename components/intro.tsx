@@ -10,13 +10,28 @@ import { HiDownload } from "react-icons/hi"
 import Me from '../public/me_2-fotor.png'
 import { FaGithubSquare } from 'react-icons/fa'
 import { useEffect, useState ,useRef } from 'react'
+import {useInView} from "react-intersection-observer"
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 
 
 const Intro = () => {
+
+  const {ref, inView} = useInView({
+    threshold:0.75,
+  })
+ const {setActiveSection , timeOfLastClick} =  useActiveSectionContext();
+
+//  we use useEffect to synchronise an expternal system
+  useEffect(() => {
+    if(inView && Date.now() - timeOfLastClick > 1000){
+      setActiveSection("Home")
+     }
+  },[inView, setActiveSection, timeOfLastClick])
+
  
   return (
-<section className='mb-28 max-w-[50rem] text-center sm:mb-0'>
+<section className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]' id='home' ref={ref}>
         <div className='flex items-center justify-center'>
                 <div className='relative'>
                     <motion.div
@@ -51,7 +66,7 @@ const Intro = () => {
         >
           <div className=''>
             <div className='text-start text-gray-800'>
-             <span className={` font-bold  text-3xl sm:text-6xl`}>Hi, I'm Saulat Zubair.</span> 
+             <span className={` font-bold  text-3xl sm:text-5xl`}>Hi, I'm Saulat Zubair.</span> 
              <AnimateTyping className='mt-10 mb-4 text-lg sm:text-2xl'/>
               </div>
         </div>
