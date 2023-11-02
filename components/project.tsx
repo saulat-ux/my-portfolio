@@ -41,15 +41,15 @@ const Project = ({
     border-black/5 rounded-lg overflow-hidden
      sm:pr-8 relative sm:h-[30rem] hover:bg-gray-200
       transition sm:group-even:pl-8 dark:text-white
-       dark:bg-white/10 dark:hover:bg-white/20 ">
+       dark:bg-white/10 dark:hover:bg-white/20  ">
    <div className="pt-4 pb-16 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%]
     flex flex-col h-full group-even:ml-[28rem]" >
     <h3 className='text-4xl font-bold'>{title}</h3>
-    <p  className='mt-2 leading-relaxed text-gray-700 text-2xl' >{description}</p>
+    <p  className='mt-2 leading-relaxed text-gray-700 text-2xl dark:text-white/70' >{description}</p>
     <ul className='flex flex-wrap mt-4 gap-2 sm:mt-auto'>
         {tags.map((tag,index) => (
             <li className='bg-black/[0.7] px-3 py-1 text-[0.9rem] uppercase tracking-wider text-white 
-            rounded-full' key={index}>{tag}</li>
+            rounded-full dark:text-white/70' key={index}>{tag}</li>
         ))}
     </ul>
     <div className='mt-5 gap-3 flex'>
