@@ -111,7 +111,13 @@ const Intro = () => {
   )
 }
 
-function AnimateTyping(props) {
+interface AnimateTypingProps{
+  className?: string;
+}
+
+
+
+const AnimateTyping: React.FC<AnimateTypingProps> =  (props) => {
   const [text, setText] = useState("");
   const speed = 50;
   const texts = ["A Full-Stack Software Engineer.", "A React and NextJs Expert.", "With a focus on Node and ExpressJs."];
@@ -119,8 +125,8 @@ function AnimateTyping(props) {
   const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
-    let timer1;
-    let timer2;
+    let timer1: NodeJS.Timeout;
+    let timer2:NodeJS.Timeout;
 
     const typeCharacter = () => {
       if (charIndex < texts[index].length) {
