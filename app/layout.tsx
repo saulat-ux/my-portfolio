@@ -1,3 +1,5 @@
+
+
 import './globals.css'
 import { Inter } from 'next/font/google'
 import  Header from '@/components/Header'
@@ -31,6 +33,8 @@ export default function RootLayout({
          rounded-full blur-[10rem] sm:w-[68.75rem] md:left=[-33rem] 
          lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]'></div>
 
+      
+      
       <ThemeContextProvider>
 
 

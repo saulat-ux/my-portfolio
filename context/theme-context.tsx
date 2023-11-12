@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState, createContext, useContext } from 'react'
 
@@ -16,7 +16,9 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | null>(null)
 
-export default function ThemeContextProvider({children}):ThemeContextProviderProps {
+export default function ThemeContextProvider({
+    children,
+}:ThemeContextProviderProps) {
 
     const [theme, setTheme] = useState<Theme>("light")
 
@@ -42,11 +44,12 @@ export default function ThemeContextProvider({children}):ThemeContextProviderPro
             document.documentElement.classList.add("dark")
 
             }
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            setTheme('dark');
-        document.documentElement.classList.add("dark")
+         } 
+        // else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        //     setTheme('dark');
+        // document.documentElement.classList.add("dark")
 
-        }
+        // }
     },[])
 
   return (
