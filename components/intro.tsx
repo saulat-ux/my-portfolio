@@ -95,13 +95,13 @@ const Intro = () => {
         className=' opacity-60 group-hover:translate-y-1 transition'
         /></a>
 
-        <a href="http://linkedin.com" target='_blank' className='bg-white p-4 text-[1.35rem] text-gray-700 flex items-center
+        <a href="https://www.linkedin.com/in/saulatzubair/" target='_blank' className='bg-white p-4 text-[1.35rem] text-gray-700 flex items-center
         gap-2 rounded-full focus:scale-110 hover:scale-110
         hover:text-gray-950 active:scale-110 transition border border-black/10 dark:bg-white/10 dark:text-white/60 '>
             <BsLinkedin/>
         </a>
 
-        <a href="http://github.com" target='_blank' className='bg-white p-4 text-[1.7rem] text-gray-700 flex items-center
+        <a href="https://github.com/saulat-ux/" target='_blank' className='bg-white p-4 text-[1.7rem] text-gray-700 flex items-center
         gap-2 rounded-full focus:scale-110 hover:scale-110
         hover:text-gray-950 active:scale-110  transition border border-black/10 dark:bg-white/10 dark:text-white/60'>
             <FaGithubSquare/>
