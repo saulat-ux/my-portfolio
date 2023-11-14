@@ -72,7 +72,7 @@ export const projectsData = [
       "This a Full Stack E-commerce store that i built using the lastest technologies such as reactjs as frontend framework and expressjs as a backend framework for nodeJs. This project include the Autherization of users and the CRUD operations mongodb as source data. ",
     tags: ["React", "Javascript", "expressJs", "CSS", "Nodejs" , "REDUX"],
     imageUrl: ecomm,
-    github:"https://github.com/saulat-ux",
+    github:"https://github.com/saulat-ux/Ecommerce-store",
     demo:'https://ecommerce-store-tasleem-frontend.vercel.app/',
   },
   {
@@ -81,7 +81,7 @@ export const projectsData = [
       "Created a Puzzel game which emphasizes on the importance of user experience, created by ReactJs and Hooks to store and managed the events passed by the user A fun an exiting frontedend application for leisure time.",
     tags: ["React", "Css", "html", "Javascript", "Hooks"],
     imageUrl: magicImg,
-    github:"https://github.com/saulat-ux",
+    github:"https://github.com/saulat-ux/Magic-app",
     demo:'https://magicapp-1ecef.web.app/',
   },
 
@@ -91,7 +91,7 @@ export const projectsData = [
       "A web base platform that allows users to create their own account and then track their own transactions, users can add or remove any transactions, multiple users can create their own accounts this app.",
     tags: ["React", "firebase", "css", "javascript"],
     imageUrl: money,
-    github:"https://github.com/saulat-ux",
+    github:"https://github.com/saulat-ux/Finance_tracker",
     demo:'https://mymoney-bcaaf.web.app/',
   },
   {
@@ -100,7 +100,7 @@ export const projectsData = [
       "A web application that allows user to create their own account and than keep track of their projects, users can assign projects to other users and also give a due date for the project completion",
     tags: ["React", "firebase", "css", "javascript"],
     imageUrl: pro,
-    github:"https://github.com/saulat-ux",
+    github:"https://github.com/saulat-ux/project_managment",
     demo:'https://projectmanagnment.web.app/',
   },
   {
@@ -109,7 +109,7 @@ export const projectsData = [
       "A Bitnine Global webpage with functionalities. ",
     tags: ["React", "css", "javascript"],
     imageUrl: bit,
-    github:"https://github.com/saulat-ux",
+    github:"https://github.com/saulat-ux/Bitnine-Global",
     demo:'https://bitnineglobal-e10c2.web.app/',
   },
 ] as const;
