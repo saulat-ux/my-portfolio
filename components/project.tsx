@@ -48,7 +48,7 @@ const Project = ({
 
 
     <h3 className='text-xl font-bold sm:text-4xl'>{title}</h3>
-    <p  className='mt-2 leading-relaxed text-gray-700 text-sm sm:text-2xl dark:text-white/70' >{description}</p>
+    <p  className='mt-2 leading-relaxed text-gray-700 hidden xl:block sm:text-2xl dark:text-white/70' >{description}</p>
     <ul className='flex flex-wrap mt-4 gap-2 sm:mt-auto'>
         {tags.map((tag,index) => (
             <li className='bg-black/[0.7] px-3 py-1 text-[0.5rem] sm:text-[0.9rem] uppercase tracking-wider text-white 
